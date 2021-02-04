@@ -2,7 +2,7 @@ const router = require("express").Router();
 const connection = require("../db_connection");
 
 router.get("/", (_, res) => {
-  const sql = "SELECT idtresorie, type, valeur FROM tresorie";
+  const sql = "SELECT idtresorie, name, type, valeur FROM tresorie";
   connection.query(sql, (err, result) => {
     if (err) {
       res.status(500).json({ errorMessage: err.message });
