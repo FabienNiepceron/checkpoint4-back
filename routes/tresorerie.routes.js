@@ -27,8 +27,8 @@ router.post("/", (req, res) => {
 
 router.put("/", (req, res) => {
   const tresorerie = req.body;
-  const { id } = req.params;
-  const sql = `UPDATE tresorie SET ? WHERE id = ${id}`;
+  // const { id } = req.params;
+  const sql = `UPDATE tresorie SET ? WHERE idtresorie = ?`;
   connection.query(sql, [tresorerie, req.params.id], (err, result) => {
     if (err) {
       res.status(500).json({ errorMessage: err.message });
